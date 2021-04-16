@@ -1,0 +1,1 @@
+https://www.epdata.es/datos/evolucion-coronavirus-cada-comunidad/518/madrid/304  --> descargar de ahi segun la grafica, datos no estan desde principio de pandemia
