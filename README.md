@@ -11,13 +11,14 @@ Modeling and forecasting the evolution of the Covid-19 pandemic in Spain
 
 ## General Info
 ***
-<!--Write down the general informations of your project.-->
+<!--Write down the general informations of our project.-->
 
 We model and forecast the evolution of the COVID-19 pandemic in Spain using _____ recent data from _______ to __________. We use the continuous-time model variation of the SIR model. 
 <!--and we include a parameter that comprises the effects of social distancing measures ???-->
 
 Short and long term forecasts show that the social distancing policy imposed by the government is able to flatten the pattern of infection of the COVID-19. However, our results also show that if this policy does not last enough time, it is only able to shift the peak of infection into the future keeping the value of the peak in almost the same value. Furthermore, our long term simulations forecast the optimal date to end the policy. Finally, we show that the proportion of asymptomatic individuals affects the amplitude of the peak of symptomatic infected, suggesting that it is important to test the population.
 
+If more information was needed, you can always consult our [official documentation](docs) or [open an issue](https://www.google.com/), and one of the Teams member will respond to you.
 
 
 ### Screenshot
@@ -53,8 +54,10 @@ Give instructions on how to collaborate with your project.
 ## FAQs
 ***
 A list of frequently asked questions
-1. **This is a question in bold**
-Answer of the first question with _italic words_. 
+1. **Need Help?**
+The [official documentation](docs) has command references and specifications for the tool.
+
+<!-- Answer of the first question with _italic words_. 
 2. __Second question in bold__ 
 To answer this question we use an unordered list:
 * First point
@@ -65,4 +68,4 @@ Answer of the third question with *italic words*.
 4. **Fourth question in bold**
 | Headline 1 in the tablehead | Headline 2 in the tablehead | Headline 3 in the tablehead |
 |:--------------|:-------------:|--------------:|
-| text-align left | text-align center | text-align right |
+| text-align left | text-align center | text-align right | -->
