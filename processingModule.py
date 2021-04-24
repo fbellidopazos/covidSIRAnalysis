@@ -1,6 +1,6 @@
 import csv
+from downloaderModule import downloader
 
-allCities = {}
 
 
 
@@ -33,7 +33,10 @@ def checkLong(allCities):
                 continue
     print("Evrything in order")
 
-def getCity(name):
+def getCities(withDown=False):
+    allCities = {}
+    if withDown:
+        downloader()
     with open('../Data/datosCovid.csv',encoding="UTF8") as csv_file:
         csv_reader = csv.reader(csv_file, delimiter=',')
         fecha = "" # Var Init
@@ -68,7 +71,7 @@ def getCity(name):
                     fecha = row[fechaField]
             line_count += 1
         checkLong(allCities)
-    return allCities[name]
+    return allCities
 
 
 
