@@ -1,5 +1,5 @@
 import requests,zipfile,io
-from os import walk,replace
+from os import walk
 from shutil import rmtree
 
 def downloader():
@@ -21,7 +21,7 @@ def downloader():
 
 
     path2file = "./Data/datosCovid.csv"
-    replace(fullPath, path2file)
+    os.replace(fullPath, path2file)
 
     rmtree(f'{path}', ignore_errors=True)
 

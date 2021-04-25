@@ -37,7 +37,7 @@ def getCities(withDown=False):
     allCities = {}
     if withDown:
         downloader()
-    with open('./Data/datosCovid.csv',encoding="UTF8") as csv_file:
+    with open('../Data/datosCovid.csv',encoding="UTF8") as csv_file:
         csv_reader = csv.reader(csv_file, delimiter=',')
         fecha = "" # Var Init
         line_count = 0
