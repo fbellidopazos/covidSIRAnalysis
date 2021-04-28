@@ -1,13 +1,11 @@
 % This file was created by tikzplotlib v0.9.8.
 \begin{tikzpicture}
 
-\definecolor{color0}{rgb}{0.203921568627451,0.541176470588235,0.741176470588235}
-\definecolor{color1}{rgb}{0.650980392156863,0.0235294117647059,0.156862745098039}
-\definecolor{color2}{rgb}{0.47843137254902,0.407843137254902,0.650980392156863}
+\definecolor{color0}{rgb}{0.12156862745098,0.466666666666667,0.705882352941177}
+\definecolor{color1}{rgb}{1,0.498039215686275,0.0549019607843137}
+\definecolor{color2}{rgb}{0.172549019607843,0.627450980392157,0.172549019607843}
 
 \begin{axis}[
-axis background/.style={fill=white!93.3333333333333!black},
-axis line style={white!73.7254901960784!black},
 legend cell align={left},
 legend style={
   fill opacity=0.8,
@@ -15,20 +13,18 @@ legend style={
   text opacity=1,
   at={(0.91,0.5)},
   anchor=east,
-  draw=white!80!black,
-  fill=white!93.3333333333333!black
+  draw=white!80!black
 },
+tick align=outside,
 tick pos=left,
-x grid style={white!69.8039215686274!black},
-xmajorgrids,
+x grid style={white!69.0196078431373!black},
 xmin=-3, xmax=63,
 xtick style={color=black},
-y grid style={white!69.8039215686274!black},
-ymajorgrids,
+y grid style={white!69.0196078431373!black},
 ymin=-0.04995, ymax=1.04895,
 ytick style={color=black}
 ]
-\addplot [thick, color0]
+\addplot [semithick, color0]
 table {%
 0 0.999
 1.01694915254237 0.998395810140611
@@ -92,7 +88,7 @@ table {%
 60 0.0607530797200546
 };
 \addlegendentry{Susceptibles}
-\addplot [thick, color1]
+\addplot [semithick, color1]
 table {%
 0 0.001
 1.01694915254237 0.00140212733533757
@@ -156,7 +152,7 @@ table {%
 60 0.004067957983197
 };
 \addlegendentry{Infectados}
-\addplot [thick, color2]
+\addplot [semithick, color2]
 table {%
 0 0
 1.01694915254237 0.000202062524051821
