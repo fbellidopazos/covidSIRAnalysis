@@ -3,8 +3,9 @@ import matplotlib.pyplot as plt
 from scipy import integrate,optimize
 from processingModule import getCities
 import tikzplotlib
-#plt.style.use("bmh")
+
 plt.style.use("seaborn")
+
 def SIR(y,t,beta,gamma):
     S,I,R = y
     dS = -beta * S * I / N
@@ -23,38 +24,24 @@ results = []
 
 t = np.linspace(0.0,90,90)
 
-
+'''
+Obtenemos todas las funciones de cada par <beta,gamma>
+'''
 for i in vals:
     beta,gamma = i
     results.append(integrate.odeint(SIR, (S0, I0, R0), t, args=(beta, gamma)))
 
 
 '''
-fig, ax = plt.subplots(3)
-
-for i in range(0,len(vals)):
-    ax[0].set_title("Susceptibles")
-    ax[0].plot(t,results[i][:,0]/N)
-
-
-    ax[1].set_title("Infectados")   
-    ax[1].plot(t,results[i][:,1]/N)
-
-    ax[2].set_title("Recuperados")
-    ax[2].plot(t,results[i][:,2]/N)
-
-
-# %%
-
-ax[0].legend(vals)
-ax[1].legend(vals)
-ax[2].legend(vals)
-
-tikzplotlib.clean_figure()
-tikzplotlib.save("latex/Comparison_1to1.tex")
-
-#plt.show()
+Empezamos a sacar gráficas
+1. Comparamos all versus all
+    1.1 Susceptibles
+    1.2 Infectados
+    1.3 Recuperados
+2. Graficas SIR individuales
+3. Acumuladas
 '''
+# 
 figs=[]
 figs.append(plt.figure("Susceptibles"))
 for i in range(0,len(vals)):
@@ -63,7 +50,7 @@ for i in range(0,len(vals)):
 plt.legend([f"$\\beta$={i[0]}\n$\\gamma$={i[1]}" for i in vals],prop={'size': 10})
 tikzplotlib.clean_figure()
 tikzplotlib.save(f"latex/Comparison_1to1-Susceptibles.tex")
-#plt.show()
+
 
 figs.append(plt.figure("Infectados"))
 for i in range(0,len(vals)):
@@ -72,7 +59,7 @@ for i in range(0,len(vals)):
 plt.legend([f"$\\beta$={i[0]}\n$\\gamma$={i[1]}" for i in vals],prop={'size': 10})
 tikzplotlib.clean_figure()
 tikzplotlib.save(f"latex/Comparison_1to1-Infectados.tex")
-#plt.show()
+
 
 figs.append(plt.figure("Recuperados"))
 for i in range(0,len(vals)):
@@ -81,7 +68,7 @@ for i in range(0,len(vals)):
 plt.legend([f"$\\beta$={i[0]}\n$\\gamma$={i[1]}" for i in vals],prop={'size': 10})
 tikzplotlib.clean_figure()
 tikzplotlib.save(f"latex/Comparison_1to1-Recuperados.tex")
-#plt.show()
+
 
 
 for i in range(0,len(vals)):
@@ -94,15 +81,63 @@ for i in range(0,len(vals)):
     tikzplotlib.clean_figure()
     tikzplotlib.save(f"latex/Individual_all3[{i}].tex")
     
-
+def acumula(arr):
+    res = []
+    i = 0
+    for j in arr:
+        if i == 0:
+            res.append(i)
+        else:
+            res.append(res[i-1]+j)
+        i-=-1 
+    return res
 
 figs.append(plt.figure("Acumulados"))
 for i in range(0,len(vals)):
-    plt.plot(t,np.cumsum(results[i][:,1]))
+    plt.plot(t,acumula(results[i][:,1]))
 plt.title("Infectados acumulados")
 plt.legend([f"$\\beta$={i[0]}\n$\\gamma$={i[1]}" for i in vals],prop={'size': 10})
 tikzplotlib.clean_figure()
 tikzplotlib.save(f"latex/Comparison_Infected-Acumulative.tex")
-#plt.show()
+
+
+
 
 plt.show()
+
+
+
+'''
+Firmado por : Angel Escudero,Beatriz Sara Alonso ,Alejandro TIburon y Fernando Bellido
+                                                             ..
+                                  ,,,                         MM .M
+                              ,!MMMMMMM!,                     MM MM  ,.
+      ., .M                .MMMMMMMMMMMMMMMM.,          *MM.  MM MM .M*
+    . M: M;  M          .MMMMMMMMMMMMMMMMMMMMMM,          *MM,:M M*!M*
+   ;M MM M: .M        .MMMMMMMMMMMMMMMMMMMMMMMMMM,         *MM*...*M
+    M;MM;M :MM      .MMMMMMMMMMMMMMMMMMMMMMMMMMMMMM.       .MMMMMMMM
+    *M;M*M MM      MMMMMM  MMMMMMMMMMMMMMMMM  MMMMMM.    ,,M.M.*MMM*
+     MM*MMMM      MMMMMM @@ MMMMMMMMMMMMMMM @@ MMMMMMM.*M**MMMM;MM*
+    MM., ,MM     MMMMMMMM  MMMMMMMMMMMMMMMMM  MMMMMMMMM      *.MMM
+    *MM;MMMMMMMM.MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM.      *MMM
+     **.*MMM*  .MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM       MMMM
+      MMC      MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM.      *MMMM
+     .MM      :MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM**MMM       MMMMM
+     MMM      :M  *MMMMMMMMMMMMM.MMMMM.MMMMMMMMMM*.MM  MM:M.    *MMMMM
+    .MMM   ...:M: :M.*MMMMMMMMMMMMMMMMMMMMMMMMM*.M**   MM:MMMMMMMMMMMM*
+   AMMM..MMMMM:M.    :M.*MMMMMMMMMMMMMMMMMMMM*.MM*     MM************
+   MMMMMMMMMMM:MM     *M*.M*MMMMMMMMMMMMMM*.MC*M*     .MM
+    **********:MM.       *MM!M.*M-M-M-M*M.*MM*        MMM
+               MMM.            *MMMM!MMMM*            .MM
+                MMM.             ***   **            .MM*
+                 MMM.                               MMM*
+                  MMMM            ,.J.JJJJ.       .MMM*
+                   MMMM.       *JJJJJJJ*JJJM   CMMMMM
+                     MMMMM.    *JJJJJJJJ*JJJ .MMMMM*
+                       MMMMMMMM.*  *JJJJJ*JJMMMMM*
+                         *MMMMMMMMM*JJJJJ JJJJJ*
+                            **MMMMMMJJJJJJJJJJ*
+                                    *JJJJJJJJ*		
+
+
+'''
