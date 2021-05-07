@@ -34,7 +34,7 @@ Parametros a cambiar
     - vals : Listado de tuplas <beta, gamma>
     - export2Tex : Si quieres documento en latex (True), caso contrario (False)
 
-## Créditos
+## Créditos (6 ects)
 Este proyecto ha sido realizado por:
 - Angel Escudero Iglesias
 - Sara Beatriz Alonso Fernandez

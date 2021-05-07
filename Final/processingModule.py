@@ -31,7 +31,7 @@ def checkLong(allCities):
                 print("Error")
             else:
                 continue
-    print("Evrything in order")
+    print("Everything in order")
 
 def getCities(withDown=False):
     allCities = {}
