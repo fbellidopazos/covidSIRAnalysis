@@ -1,0 +1,69 @@
+% This file was created by tikzplotlib v0.9.8.
+\begin{tikzpicture}
+
+\definecolor{color0}{rgb}{0.917647058823529,0.917647058823529,0.949019607843137}
+\definecolor{color1}{rgb}{0.298039215686275,0.447058823529412,0.690196078431373}
+\definecolor{color2}{rgb}{0.333333333333333,0.658823529411765,0.407843137254902}
+\definecolor{color3}{rgb}{0.768627450980392,0.305882352941176,0.32156862745098}
+
+\begin{axis}[
+axis background/.style={fill=color0},
+axis line style={white},
+legend cell align={left},
+legend style={
+  fill opacity=0.8,
+  draw opacity=1,
+  text opacity=1,
+  at={(0.91,0.5)},
+  anchor=east,
+  draw=none,
+  fill=color0
+},
+tick align=outside,
+tick pos=left,
+title={Caso Básico
+\(\displaystyle \beta\): 0.914 \(\displaystyle \gamma\):0.917 \(\displaystyle R_0\):0.997},
+x grid style={white},
+xmajorgrids,
+xmin=-18.25, xmax=383.25,
+xtick style={color=white!15!black},
+y grid style={white},
+ymajorgrids,
+ymin=-0.0499108011848578, ymax=1.04814211727881,
+ytick style={color=white!15!black}
+]
+\addplot [line width=0.7pt, color1]
+table {%
+0 0.998230695724487
+31.0851650238037 0.99362587928772
+59.1620864868164 0.990399122238159
+88.2417602539062 0.988001942634583
+121.332420349121 0.986225008964539
+162.445053100586 0.984974265098572
+221.607147216797 0.984175443649292
+328.901092529297 0.983798027038574
+365 0.983766555786133
+};
+\addlegendentry{Susceptibles}
+\addplot [line width=0.7pt, color2]
+table {%
+0 0.000178217887878418
+365 7.15255737304688e-07
+};
+\addlegendentry{Infectados}
+\addplot [line width=0.7pt, color3]
+table {%
+0 0.00159108638763428
+31.0851650238037 0.00622916221618652
+59.1620864868164 0.00949215888977051
+88.2417602539062 0.0119231939315796
+121.332420349121 0.0137289762496948
+162.445053100586 0.0150020122528076
+220.604400634766 0.0158078670501709
+325.892852783203 0.0161968469619751
+365 0.0162328481674194
+};
+\addlegendentry{Recuperados}
+\end{axis}
+
+\end{tikzpicture}

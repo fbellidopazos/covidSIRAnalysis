@@ -1,0 +1,114 @@
+% This file was created by tikzplotlib v0.9.8.
+\begin{tikzpicture}
+
+\definecolor{color0}{rgb}{0.917647058823529,0.917647058823529,0.949019607843137}
+
+\begin{axis}[
+axis background/.style={fill=color0},
+axis line style={white},
+legend cell align={left},
+legend style={
+  fill opacity=0.8,
+  draw opacity=1,
+  text opacity=1,
+  at={(0.03,0.97)},
+  anchor=north west,
+  draw=none,
+  fill=color0
+},
+tick align=outside,
+tick pos=left,
+title={Caso Basico},
+x grid style={white},
+xmajorgrids,
+xmin=398.7, xmax=449.3,
+xtick style={color=white!15!black},
+y grid style={white},
+ymajorgrids,
+ymin=-8472.65797296911, ymax=361075.817432351,
+ytick style={color=white!15!black}
+]
+\addplot [line width=0.7pt, blue]
+table {%
+401 8325
+403 24860.16015625
+405 41235.33203125
+407 57442.58984375
+409 73474.390625
+411 89323.5625
+413 104983.3515625
+415 120447.375
+417 135709.6875
+419 150764.71875
+421 165607.328125
+423 180232.796875
+425 194636.796875
+427 208815.40625
+429 222765.140625
+431 236482.859375
+433 249965.875
+434 256618.625
+434 263271.375
+436 276398.0625
+438 289284.90625
+440 301930.5
+442 314333.8125
+444 326494.09375
+446 338411
+447 344278.15625
+};
+\addlegendentry{Modelo Basico}
+\addplot [line width=0.7pt, red, mark=*, mark size=3.5, mark options={solid}, only marks]
+table {%
+401 8325
+402 14302
+403 19083
+404 23893
+405 28852
+406 37027
+407 46810
+408 57008
+409 67214
+410 77152
+411 84377
+412 89813
+413 98062
+414 107740
+415 117881
+416 127446
+417 137577
+418 144822
+419 150471
+420 158701
+421 168455
+422 178076
+423 187374
+424 197274
+425 203682
+426 209100
+427 216969
+428 225001
+429 232869
+430 240780
+431 247016
+432 251005
+433 254278
+434 254890
+435 254890
+436 254890
+437 254890
+438 254890
+439 254890
+440 254890
+441 254890
+442 254890
+443 254890
+444 254890
+445 254890
+446 254890
+447 254890
+};
+\addlegendentry{Datos Reales}
+\end{axis}
+
+\end{tikzpicture}
