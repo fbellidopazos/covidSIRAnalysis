@@ -1,6 +1,6 @@
 import csv
 from downloaderModule import downloader
-
+import requests
 
 
 
@@ -31,7 +31,7 @@ def checkLong(allCities):
                 print("Error")
             else:
                 continue
-    print("Evrything in order")
+    print("Everything in order")
 
 def getCities(withDown=False):
     allCities = {}
@@ -77,21 +77,4 @@ def getCities(withDown=False):
 
 
 
-
-
-def source2():
-    # https://opendata.ecdc.europa.eu/covid19/casedistribution/json/
-    # https://opendata.ecdc.europa.eu/covid19/nationalcasedeath_eueea_daily_ei/json/
-     data = requests.get('https://opendata.ecdc.europa.eu/covid19/casedistribution/json/').json()
-     j=0
-     dataP = []
-     for i in data["records"]:
-         if(i['geoId']=="ES"):
-            a= i['dateRep']
-            b=i['cases']
-            c= (a,b)
-            dataP.append(c)
-            #print(f"{j}{i['geoId']}\t{i['popData2019']}\t{i['dateRep']}\t{i['cases']}\t{i['deaths']}")
-            j+=1
-     return dataP
 
